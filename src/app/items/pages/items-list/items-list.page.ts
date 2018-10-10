@@ -1,4 +1,4 @@
-import { ItemsService } from '@items/services/items-mock.service';
+import { ItemsService } from '@items/services/items.service';
 import { Component, OnInit } from '@angular/core';
 import { Item } from '@items/models/item.interface';
 import { Router } from '@angular/router';
@@ -19,13 +19,15 @@ export class ItemsListPage implements OnInit {
 
   ngOnInit() {
     this.itemsService.latest().then(
-      data => this.items = data
+      data => {
+        this.items = data;
+        console.log(data);
+      }
     );
   }
 
   openItem(item: Item) {
-    this.itemsService.setCurrentItem(item).then(
-      () => this.router.navigate(['items/detail'])
-    );
+    this.itemsService.setCurrentItem(item);
+    this.router.navigate(['items/detail']);
   }
 }

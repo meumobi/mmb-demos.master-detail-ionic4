@@ -6,7 +6,7 @@
 
 <ion-content padding>
   <ion-card *ngFor="let item of items" (click)="openItem(item)">
-    <ion-img [src]="item.urlToImage"></ion-img>
+    <ion-img [src]="item.urlToImage" *ngIf="item.urlToImage"></ion-img>
     <ion-card-header>
         <ion-card-title>{{ item.title }}</ion-card-title>
     </ion-card-header>

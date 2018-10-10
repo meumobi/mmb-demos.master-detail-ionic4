@@ -18,9 +18,8 @@ export class ItemDetailPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.itemsService.getCurrentItem().then(
-      item => this.item = item
-    );
+    this.item = this.itemsService.getCurrentItem();
+    
     //this.id = this.route.snapshot.paramMap.get('id');
   }
 
