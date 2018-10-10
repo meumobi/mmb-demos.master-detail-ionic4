@@ -5,5 +5,13 @@
 </ion-header>
 
 <ion-content padding>
-  Item id: {{id}}
+  <ion-card *ngIf="item">
+    <ion-img [src]="item.urlToImage"></ion-img>
+    <ion-card-header>
+        <ion-card-title>{{ item.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <p>{{ item.content }}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

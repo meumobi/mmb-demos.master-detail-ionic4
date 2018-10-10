@@ -1,3 +1,5 @@
+import { ItemsService } from '@items/services';
+import { Item } from '@items/models/item.interface';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -8,12 +10,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ItemDetailPage implements OnInit {
 
-  id: string;
+  item: Item;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private itemsService: ItemsService
+  ) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.itemsService.getCurrentItem().then(
+      item => this.item = item
+    );
+    //this.id = this.route.snapshot.paramMap.get('id');
   }
 
 }

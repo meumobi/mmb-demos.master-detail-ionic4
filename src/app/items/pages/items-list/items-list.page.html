@@ -5,5 +5,13 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-button href="/items/123">go to 123 item</ion-button>
+  <ion-card *ngFor="let item of items" (click)="openItem(item)">
+    <ion-img [src]="item.urlToImage"></ion-img>
+    <ion-card-header>
+        <ion-card-title>{{ item.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <p>{{ item.content }}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
