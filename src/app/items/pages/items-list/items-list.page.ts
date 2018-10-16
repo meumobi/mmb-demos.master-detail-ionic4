@@ -21,7 +21,6 @@ export class ItemsListPage implements OnInit {
     this.itemsService.latest().then(
       data => {
         this.items = data;
-        console.log(data);
       }
     );
   }

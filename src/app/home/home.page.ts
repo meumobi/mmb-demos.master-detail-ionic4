@@ -1,3 +1,4 @@
+import { AuthService } from '@core/auth/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  constructor(
+    private authService: AuthService
+  ) {}
+
+  logout() {
+    this.authService.logout();
+ }
 }

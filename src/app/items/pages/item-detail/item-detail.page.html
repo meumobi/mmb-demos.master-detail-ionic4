@@ -1,12 +1,15 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/items"></ion-back-button>
+    </ion-buttons>
     <ion-title>item-detail</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <ion-card *ngIf="item">
-    <ion-img [src]="item.urlToImage"></ion-img>
+    <ion-img [src]="item.urlToImage" *ngIf="item.urlToImage"></ion-img>
     <ion-card-header>
         <ion-card-title>{{ item.title }}</ion-card-title>
     </ion-card-header>
