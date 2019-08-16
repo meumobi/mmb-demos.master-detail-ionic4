@@ -7,8 +7,8 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Location } from '@angular/common';
 import { Deeplinks } from '@ionic-native/deeplinks/ngx';
-import { HomePage } from './home/home.page';
 import { ItemDetailPage } from '@items/pages/item-detail/item-detail.page';
+import { OneSignal } from '@ionic-native/onesignal/ngx';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +23,7 @@ export class AppComponent {
     private router: Router,
     private location: Location,
     private deeplinks: Deeplinks,
+    private oneSignal: OneSignal,
     // private state: RouterState
   ) {
     // const state: RouterState = router.routerState;
@@ -33,6 +34,12 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
+      this.oneSignal.startInit('e83fce5e-ebc8-475b-b615-fa5f1e11a129', '236514035211');
+      this.oneSignal.handleNotificationOpened().subscribe(
+        data => {
+        console.log(data);
+      });
+      this.oneSignal.endInit();
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 

@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { IonicStorageModule } from '@ionic/storage';
 import { Deeplinks } from '@ionic-native/deeplinks/ngx';
+import { OneSignal } from '@ionic-native/onesignal/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +27,7 @@ import { Deeplinks } from '@ionic-native/deeplinks/ngx';
     StatusBar,
     SplashScreen,
     Deeplinks,
+    OneSignal,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent]
