@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ItemDetailPage implements OnInit {
 
   item: Item;
+  id: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,8 +20,8 @@ export class ItemDetailPage implements OnInit {
 
   ngOnInit() {
     this.item = this.itemsService.getCurrentItem();
-    
-    //this.id = this.route.snapshot.paramMap.get('id');
+    this.id = this.route.snapshot.paramMap.get('id');
+    console.log(this.id);
   }
 
 }

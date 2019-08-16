@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content padding>
+  <p>{{ id }}</p>
   <ion-card *ngIf="item">
     <ion-img [src]="item.urlToImage" *ngIf="item.urlToImage"></ion-img>
     <ion-card-header>

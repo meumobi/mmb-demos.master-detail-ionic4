@@ -5,6 +5,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'list' },
   { path: 'list', loadChildren: './pages/items-list/items-list.module#ItemsListPageModule' },
   { path: 'detail', loadChildren: './pages/item-detail/item-detail.module#ItemDetailPageModule' },
+  { path: 'detail/:id', loadChildren: './pages/item-detail/item-detail.module#ItemDetailPageModule' },
 ];
 
 @NgModule({
